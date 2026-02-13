@@ -3,7 +3,6 @@ import JSZip from 'jszip'
 import { parseCookies } from 'nookies'
 
 import { BookRecord, db } from './db'
-import { readBlob } from './file'
 
 export const WEBDAV_CONFIG_KEY = 'webdav-config'
 

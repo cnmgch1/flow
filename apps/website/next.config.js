@@ -1,3 +1,4 @@
+const path = require('path')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
@@ -32,6 +33,10 @@ const opts = {
  **/
 const config = {
   pageExtensions: ['ts', 'tsx', 'mdx'],
+  output: 'standalone',
+  experimental: {
+    outputFileTracingRoot: path.join(__dirname, '../..'),
+  },
   pwa: {
     dest: 'public',
   },

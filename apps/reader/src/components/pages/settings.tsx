@@ -1,7 +1,7 @@
 import Dexie from 'dexie'
 import { useRouter } from 'next/router'
+import { destroyCookie } from 'nookies'
 import { useState } from 'react'
-import { parseCookies, destroyCookie } from 'nookies'
 
 import {
   ColorScheme,

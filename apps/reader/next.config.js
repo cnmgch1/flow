@@ -54,7 +54,13 @@ const config = {
 const base = withPWA(withTM(withBundleAnalyzer(config)))
 
 const dev = base
-const docker = base
+const docker = {
+  ...base,
+  output: 'standalone',
+  experimental: {
+    outputFileTracingRoot: path.join(__dirname, '../../'),
+  },
+}
 const prod = withSentryConfig(
   base,
   // Make sure adding Sentry options is the last code to run before exporting, to
@@ -62,4 +68,13 @@ const prod = withSentryConfig(
   sentryWebpackPluginOptions,
 )
 
-module.exports = IS_DEV ? dev : IS_DOCKER ? docker : prod
+// Always use standalone output for production builds
+const prodStandalone = {
+  ...prod,
+  output: 'standalone',
+  experimental: {
+    outputFileTracingRoot: path.join(__dirname, '../../'),
+  },
+}
+
+module.exports = IS_DEV ? dev : IS_DOCKER ? docker : prodStandalone
