@@ -10,6 +10,8 @@
 
 ## 功能特性
 
+- **AI 大模型助手**：选中文本一键 AI 解读、侧边栏历史对话持久化与自定义 Prompt
+- **WebDAV 网盘同步**：支持通过 WebDAV 跨设备同步书籍数据
 - 网格布局
 - 书内搜索
 - 图片预览
@@ -18,7 +20,6 @@
 - 主题切换
 - 通过链接分享/下载书籍
 - 数据导出
-- WebDAV 云存储（已移除 Dropbox）
 
 计划中的功能，请查看我们的 [路线图](https://pacexy.notion.site/283696d0071c43bfb03652e8e5f47936?v=b43f4dd7a3cb4ce785d6c32b698a8ff5)。
 
@@ -33,7 +34,7 @@
 ### 克隆仓库
 
 ```bash
-git clone https://github.com/pacexy/flow
+git clone https://github.com/cnmgch1/flow.git
 ```
 
 ### 安装依赖
