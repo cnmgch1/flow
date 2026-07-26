@@ -85,7 +85,11 @@ export const AiView: React.FC<PaneViewProps> = (props) => {
       ]}
       {...props}
     >
-      <div className="select-text flex h-full flex-col overflow-hidden bg-surface text-on-surface">
+      <div
+        className="select-text flex h-full flex-col overflow-hidden bg-surface text-on-surface"
+        onKeyDown={(e) => e.stopPropagation()}
+        onKeyUp={(e) => e.stopPropagation()}
+      >
         {/* API & Prompt Settings Dropdown Panel */}
         {showSettings && (
           <div className="border-b border-surface-variant bg-surface-variant/20 p-3 space-y-2 text-xs select-text">
@@ -223,6 +227,7 @@ export const AiView: React.FC<PaneViewProps> = (props) => {
                 className="w-full text-xs max-h-24 resize-none"
                 onChange={(e) => setInputPrompt(e.target.value)}
                 onKeyDown={(e) => {
+                  e.stopPropagation()
                   if (e.key === 'Enter' && !e.shiftKey) {
                     e.preventDefault()
                     handleSend()
